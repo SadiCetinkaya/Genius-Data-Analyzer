@@ -1,6 +1,6 @@
 from sklearn import datasets
 import pandas as pd
-from Descriptive import *
+from Functions.Descriptive import *
 
 boston = datasets.load_boston()
 
