@@ -1,2 +1,2 @@
 # Statistics_Tool
-Basic statistical functions such as Descriptives, Parametric &amp; Nonparametric Tests, Regressions
+Main statistical functions such as Descriptives, Parametric &amp; Nonparametric Tests, Regressions
