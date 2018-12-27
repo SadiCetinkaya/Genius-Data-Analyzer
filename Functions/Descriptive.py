@@ -13,6 +13,29 @@ class stats:
     def info(self):
         return self.data.dtypes
 
+    def variables(self,var):
+        liste = []
+        for i in range(0, self.data.shape[1]):
+            col = self.data.dtypes[i]
+            if (var == 0):
+                if (col == "object"):
+                    liste.append(i)
+            elif (var == 1):
+                if (col == "int64" or col == "float64"):
+                    liste.append(i)
+            elif (var == 2):
+                if (col == "bool"):
+                    liste.append(i)
+        return  liste
+
+    def numeric(self):
+        liste = []
+        for i in range(0, self.data.shape[1]):
+            col = self.data.dtypes[i]
+            if (col == "int64" or col == "float64"):
+                liste.append(i)
+        return  liste
+
     def desc_stats(self):
         results = np.ndarray(shape=(self.data.shape[1], 19), dtype=float, order='F')
         results[:, 0] = self.data.count()
@@ -47,7 +70,7 @@ class stats:
     def interval(self,col,sınıf):
         k = round(self.range/sınıf)
         for i in range(int(self.min[0]),int(self.max[0])):
-            cf = pd.value_counts(self.data.ix[i:i+k, col]).to_frame().reset_index()
+            cf = self.data[(self.data.ix[:, col] > i) & (self.data.ix[:, col] < (i+k))].shape[0]
             df = pd.DataFrame([i, i+k,cf], columns=['start','end','frequency'])
             i += k
         return df
