@@ -1,2 +1,2 @@
-# Statistics_Tool
-Project Desciption: Main Dynamic statistical functions such as Descriptives, Parametric &amp; Nonparametric Tests, Regressions etc. in Python.
+# Genius-Data-Analyzer
+Genius-Data-Analyzer is a kind of statistical tools which automate the main dynamic statistical functions such as descriptives, parametric & nonparametric tests, machine learning algorithms etc. in Python.
